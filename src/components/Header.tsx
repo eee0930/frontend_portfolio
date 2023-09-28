@@ -23,16 +23,16 @@ const HeaderNav = styled.nav`
   position: relative;
 `;
 const NavContainer = styled.div`
-  padding: 0 2rem;
+  padding: 0 1rem;
   align-content: flex-start;
   align-items: flex-start;
   display: flex;
   flex: none;
   flex-direction: row;
   flex-wrap: nowrap;
-  height: min-content;
+  height: max-content;
   justify-content: space-between;
-  overflow: hidden;
+  //overflow: hidden;
   width: 100%;
   position: relative;
 
@@ -67,9 +67,9 @@ const MenuSection = styled.div`
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 48px;
-    height: min-content;
+    height: max-content;
     justify-content: center;
-    overflow: hidden;
+    //overflow: hidden;
     padding: 0;
     position: relative;
     width: max-content;
@@ -102,7 +102,7 @@ function Header({ scrollCallback }: IHeader) {
                 target="_blank"
                 rel="noreferrer"
               >
-                <i className="fa-brands fa-github" />
+                <i className="fa-brands fa-github fa-lg" />
               </a>
             </MenuEle>
           </MenuSection>

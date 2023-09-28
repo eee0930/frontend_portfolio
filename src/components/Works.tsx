@@ -8,25 +8,32 @@ import WorkModal from './WorkModal';
 const WorksContainer = styled.div`
   position: sticky;
   top: 0;
-  width: 90%;
   height: 100vh;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  width: 100%;
+  @media (min-width: 991.5px) {
+    width: 90%;
+  }
 `;
 const Title = styled.div`
   position: absolute;
   top: 10rem;
   left: 0;
   font-size: 20px;
-  width: 30%;
-  padding-left: 3rem;
-  //text-align: center;
+  width: 100%;
+  text-align: center;
   font-weight: bold;
   color: #292929;
   text-transform: uppercase;
+  @media (min-width: 991.5px) {
+    padding-left: 3rem;
+    text-align: left;
+    width: 30%;
+  }
 `;
 const TickerContainer = styled.div`
   width: 100%;

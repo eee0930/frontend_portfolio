@@ -7,7 +7,6 @@ const JumboTitleConver = styled.div`
   left: 0;
   right: 0;
   width: 100%;
-
   display: flex;
   flex-wrap: wrap;
   color: rgb(245, 245, 245);
@@ -20,7 +19,7 @@ const CoverWrap = styled.div`
   flex: 0 0 100%;
   max-width: 100%;
   align-self: end;
-  padding: 1rem 2rem;
+  padding: 1rem;
 `;
 const JumboTitle = styled(CoverWrap)`
   font-size: 18vmin;

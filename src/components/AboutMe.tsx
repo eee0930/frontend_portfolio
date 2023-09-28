@@ -3,7 +3,6 @@ import GrungeContainer from './GrungeContianer';
 import { motion } from 'framer-motion';
 
 const AboutMeContainer = styled(motion.div)`
-  width: 90%;
   margin: 0 auto;
   height: 100vh;
   position: sticky;
@@ -12,6 +11,10 @@ const AboutMeContainer = styled(motion.div)`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  width: 100%;
+  @media (min-width: 991.5px) {
+    width: 90%;
+  }
 `;
 const AboutMeCover = styled(motion.div)`
   width: 100%;
@@ -20,18 +23,19 @@ const AboutMeCover = styled(motion.div)`
 `;
 const TextContent = styled.div`
   padding: 2rem;
-  text-align: left;
+  text-align: center;
   font-size: 20px;
 
   color: rgb(245, 245, 245);
   @media (min-width: 991.5px) {
     padding: 0 3rem;
+    text-align: left;
   }
 `;
 const Introduction = styled(motion.div)`
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.7;
-  padding: 2rem;
+  padding: 2rem 1rem;
   color: rgb(245, 245, 245);
   span,
   a {
@@ -53,11 +57,14 @@ const Introduction = styled(motion.div)`
     background-color: rgba(254, 255, 167, 0.5);
   }
   .phase {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
   @media (min-width: 991.5px) {
     font-size: 18px;
     padding: 0;
+    .phase {
+      margin-bottom: 1rem;
+    }
   }
 `;
 const ImageContainer = styled(motion.div)`
@@ -65,7 +72,7 @@ const ImageContainer = styled(motion.div)`
 `;
 const Image = styled(motion.div)`
   width: 100%;
-  max-width: 300px;
+  max-width: 250px;
   aspect-ratio: 1 / 1;
   background-repeat: no-repeat;
   background-size: cover;
@@ -216,7 +223,10 @@ function AboutMe() {
               </div>
             </div>
             <ButtonSection variants={IconVBounce} className="row">
-              <IconSection variants={IconOpacity} className="col-3">
+              <IconSection
+                variants={IconOpacity}
+                className="d-none d-md-inline-block col-6 col-xl-3"
+              >
                 <Icon>
                   <img
                     src={`${process.env.PUBLIC_URL}/img/atom.png`}
@@ -229,7 +239,10 @@ function AboutMe() {
                   능숙하게 합니다.
                 </IconDetail>
               </IconSection>
-              <IconSection variants={IconOpacity} className="col-3">
+              <IconSection
+                variants={IconOpacity}
+                className="d-none d-md-inline-block ol-6 col-xl-3"
+              >
                 <Icon>
                   <img
                     src={`${process.env.PUBLIC_URL}/img/responsive.png`}
@@ -241,7 +254,10 @@ function AboutMe() {
                   제가 만든 레이아웃은 반응형, 웹 접근성을 항상 고려합니다.
                 </IconDetail>
               </IconSection>
-              <IconSection variants={IconOpacity} className="col-3">
+              <IconSection
+                variants={IconOpacity}
+                className="d-none d-md-inline-block col-6 col-xl-3"
+              >
                 <Icon>
                   <img
                     src={`${process.env.PUBLIC_URL}/img/creative.png`}
@@ -253,7 +269,10 @@ function AboutMe() {
                   사용하기 쉽고 직관적인 UX/UI를 선호합니다.
                 </IconDetail>
               </IconSection>
-              <IconSection variants={IconOpacity} className="col-3">
+              <IconSection
+                variants={IconOpacity}
+                className="d-none d-md-inline-block col-6 col-xl-3"
+              >
                 <Icon>
                   <img
                     src={`${process.env.PUBLIC_URL}/img/rocket.png`}

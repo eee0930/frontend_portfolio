@@ -2,7 +2,6 @@ import { styled } from 'styled-components';
 import GrungeContainer from './GrungeContianer';
 import { motion } from 'framer-motion';
 const AboutMeContainer = styled(motion.div)`
-  width: 90%;
   margin: 0 auto;
   height: 100vh;
   position: sticky;
@@ -11,6 +10,10 @@ const AboutMeContainer = styled(motion.div)`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  width: 100%;
+  @media (min-width: 991.5px) {
+    width: 90%;
+  }
 `;
 const AboutMeCover = styled(motion.div)`
   width: 100%;
@@ -19,23 +22,23 @@ const AboutMeCover = styled(motion.div)`
 `;
 const TextContent = styled.div`
   padding: 2rem;
-  text-align: left;
+  text-align: center;
   font-size: 20px;
 
   color: rgb(245, 245, 245);
   @media (min-width: 991.5px) {
     padding: 0 3rem;
+    text-align: left;
   }
 `;
 const Introduction = styled(motion.div)`
   font-size: 16px;
   line-height: 1.7;
-  padding: 2rem;
+  padding: 1rem;
+  text-align: center;
   color: rgb(245, 245, 245);
   .email {
-    font-size: 5vmax;
-    line-height: 0.8;
-    letter-spacing: -3px;
+    font-size: 7.5vmin;
   }
   span,
   a {
@@ -62,10 +65,19 @@ const Introduction = styled(motion.div)`
   @media (min-width: 991.5px) {
     font-size: 18px;
     padding: 0;
+    text-align: left;
+    .email {
+      font-size: 5vmax;
+      line-height: 0.8;
+      letter-spacing: -3px;
+    }
   }
 `;
 const ButtonSection = styled(motion.div)`
-  margin-top: 5rem;
+  margin-top: 3rem;
+  @media (min-width: 991.5px) {
+    margin-top: 5rem;
+  }
 `;
 const Button = styled.button`
   border: 2px solid #e8e8e8;
