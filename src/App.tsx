@@ -1,25 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useRef } from 'react';
+import Header from './components/Header';
+import Head from './components/Head';
+import styled from 'styled-components';
+import AboutMe from './components/AboutMe';
+import Works from './components/Works';
+import ContactMe from './components/ContactMe';
+import Intro from './components/Intro';
+import IntroEffect from './components/IntroEffect';
 
+const ContainerWrapper = styled.div`
+  height: 100vh;
+`;
 function App() {
+  const scrollRef = useRef<HTMLDivElement[]>([]);
+  const handleScroll = (idx: number) => {
+    scrollRef?.current[idx]?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Head />
+      <Header scrollCallback={(idx) => handleScroll(idx)} />
+      <ContainerWrapper>
+        <Intro />
+      </ContainerWrapper>
+      <ContainerWrapper
+        ref={(el: HTMLDivElement) => (scrollRef.current[0] = el)}
+        style={{ height: '170vh' }}
+      >
+        <AboutMe />
+      </ContainerWrapper>
+      <ContainerWrapper
+        ref={(el: HTMLDivElement) => (scrollRef.current[1] = el)}
+        style={{ height: '170vh' }}
+      >
+        <Works />
+      </ContainerWrapper>
+      <ContainerWrapper
+        ref={(el: HTMLDivElement) => (scrollRef.current[2] = el)}
+      >
+        <ContactMe />
+      </ContainerWrapper>
+      <IntroEffect />
+    </>
   );
 }
 
