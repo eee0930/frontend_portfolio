@@ -94,7 +94,7 @@ function Header({ scrollCallback }: IHeader) {
           <TitleSection>FrontEnd Developer. HwaYeon</TitleSection>
           <MenuSection>
             <MenuEle onClick={() => scrollCallback(0)}>About</MenuEle>
-            <MenuEle onClick={() => scrollCallback(1)}>Works</MenuEle>
+            <MenuEle onClick={() => scrollCallback(1)}>Project</MenuEle>
             <MenuEle onClick={() => scrollCallback(2)}>Contact</MenuEle>
             <MenuEle>
               <a

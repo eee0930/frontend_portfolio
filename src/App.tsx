@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Header from './components/Header';
 import Head from './components/Head';
 import styled from 'styled-components';
@@ -16,12 +16,16 @@ function App() {
   const handleScroll = (idx: number) => {
     scrollRef?.current[idx]?.scrollIntoView({ behavior: 'smooth' });
   };
-
+  useEffect(() => {
+    scrollRef?.current[4]?.scrollIntoView();
+  }, []);
   return (
     <>
       <Head />
       <Header scrollCallback={(idx) => handleScroll(idx)} />
-      <ContainerWrapper>
+      <ContainerWrapper
+        ref={(el: HTMLDivElement) => (scrollRef.current[4] = el)}
+      >
         <Intro />
       </ContainerWrapper>
       <ContainerWrapper

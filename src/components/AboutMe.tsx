@@ -176,7 +176,7 @@ const IconOpacity = {
 };
 function AboutMe() {
   return (
-    <GrungeContainer idx={1} isOut={false}>
+    <GrungeContainer idx={1}>
       <AboutMeContainer
         variants={aboutmeVariants}
         initial="offscreen"
@@ -202,7 +202,7 @@ function AboutMe() {
                 웹어플리케이션을 만들겠다는 결심 하나로 IT에 입문하게
                 되었습니다. 학습력과 이해력이 누구보다 좋아 IT 입문 6개월 만에
                 마음이 맞는 3명의 팀원들과 <span>스타트업</span>을 창업하여
-                3년간 개발 및 운영을 하였습니다.
+                3년간 운영 및 프론트엔드 개발을 하였습니다.
               </div>
               <div className="phase">
                 평일에는 <span>Vanilla JS</span> 또는 <span>ReactJS</span>로

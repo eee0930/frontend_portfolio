@@ -1,6 +1,8 @@
 import { styled } from 'styled-components';
 import GrungeContainer from './GrungeContianer';
 import { motion } from 'framer-motion';
+
+import { useState } from 'react';
 const AboutMeContainer = styled(motion.div)`
   margin: 0 auto;
   height: 100vh;
@@ -40,25 +42,7 @@ const Introduction = styled(motion.div)`
   .email {
     font-size: 7.5vmin;
   }
-  span,
-  a {
-    position: relative;
-    z-index: 10;
-  }
-  span::after,
-  a::after {
-    content: '';
-    width: 100%;
-    height: 2px;
-    background-color: rgba(167, 167, 255, 0.5);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-  a::after {
-    background-color: rgba(254, 255, 167, 0.5);
-  }
+
   .phase {
     margin-bottom: 1rem;
   }
@@ -75,18 +59,45 @@ const Introduction = styled(motion.div)`
 `;
 const ButtonSection = styled(motion.div)`
   margin-top: 3rem;
+  display: flex;
+
   @media (min-width: 991.5px) {
     margin-top: 5rem;
   }
 `;
-const Button = styled.button`
+const Button = styled.a`
   border: 2px solid #e8e8e8;
-  background-color: #e8e8e8;
-  color: #262626;
+  background-color: #262626;
+  color: #e8e8e8;
   border-radius: 25px;
   height: 50px;
+  width: 150px;
   padding: 1px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 16px;
+  outline: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-right: 1rem;
+  &:hover {
+    background-color: #e8e8e8;
+    color: #262626;
+  }
+  &.clone {
+    width: 50px;
+    position: relative;
+  }
+`;
+const ButtonMsg = styled.div`
+  background-color: #e8e8e8;
+  color: #262626;
+  border-radius: 5px;
+  width: 205px;
+  padding: 5px 5px;
+  position: absolute;
+  top: 0;
+  left: calc(100% + 1rem);
 `;
 const aboutmeVariants = {
   offscreen: {
@@ -109,7 +120,21 @@ const textBounce = {
     },
   },
 };
+const EMAIL = 'lazyhysong@gmail.com';
+const EMAIL_BTN_VALUE = 'Email 보내기';
+const CLONE_VALUE = '클립보드에 복사되었습니다.';
 function ContactMe() {
+  const [openMsg, setOpenMsg] = useState(false);
+  const handleClickClone = () => {
+    setOpenMsg(true);
+    navigator.clipboard.writeText(EMAIL).catch((err) => {
+      console.log('Something went wrong', err);
+    });
+    const timeout = setTimeout(() => {
+      setOpenMsg(false);
+      clearTimeout(timeout);
+    }, 1500);
+  };
   return (
     <GrungeContainer idx={1}>
       <AboutMeContainer
@@ -121,9 +146,20 @@ function ContactMe() {
         <AboutMeCover>
           <TextContent className="col-12 col-lg-3">CONTACT ME</TextContent>
           <Introduction variants={textBounce} className="col-12 col-lg-9">
-            <div className="email title">lazyhysong@gmail.com</div>
+            <div className="email title">{EMAIL}</div>
             <ButtonSection>
-              <Button>Email 보내기</Button>
+              <Button href="mailto:lazyhysong@gmail.com">
+                {EMAIL_BTN_VALUE}
+              </Button>
+              <Button
+                as="button"
+                onClick={handleClickClone}
+                className="clone"
+                disabled={openMsg}
+              >
+                <i className="fa-regular fa-clone" />
+                {openMsg && <ButtonMsg>{CLONE_VALUE}</ButtonMsg>}
+              </Button>
             </ButtonSection>
           </Introduction>
         </AboutMeCover>

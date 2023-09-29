@@ -1,7 +1,11 @@
 export const workList = [
   {
     name: 'Momentum Clone',
-    img: '',
+    color: '#0E6439',
+    img: [
+      'https://github-production-user-asset-6210df.s3.amazonaws.com/37135523/271180277-862ccf45-9991-43d4-9b36-40d29df15950.png',
+      'https://github-production-user-asset-6210df.s3.amazonaws.com/37135523/271180444-17ca152e-2277-43ba-9a0d-3dc2ecdbfc69.png',
+    ],
     git: 'https://github.com/eee0930/momentum_clone',
     url: 'https://eee0930.github.io/momentum_clone/',
     skill: ['JavaScript', 'HTML', 'CSS'],
@@ -10,7 +14,12 @@ export const workList = [
   },
   {
     name: 'Cheese Book',
-    img: '',
+    color: '#F9CC73',
+    logo: 'https://user-images.githubusercontent.com/37135523/270388422-a8153880-9cad-417b-9086-3bafa3f3131b.png',
+    img: [
+      'https://github-production-user-asset-6210df.s3.amazonaws.com/37135523/271179446-e60b586f-ef41-4a0f-9995-28a667e8c38e.png',
+      'https://github-production-user-asset-6210df.s3.amazonaws.com/37135523/271179578-d6a9068b-f88e-41ad-901a-fa7f9b672850.png',
+    ],
     git: 'https://github.com/eee0930/cheese_book',
     url: 'https://eee0930.github.io/cheese_book',
     skill: [
@@ -35,7 +44,11 @@ export const workList = [
   },
   {
     name: 'Netflix Clone',
-    img: '',
+    color: '#E51012',
+    img: [
+      'https://github-production-user-asset-6210df.s3.amazonaws.com/37135523/271179658-09ca930a-8c27-4da0-8cc6-85ac6a146b13.png',
+      'https://github-production-user-asset-6210df.s3.amazonaws.com/37135523/271179759-0e67efb1-1f01-43f4-9366-f3f4740aeb3d.png',
+    ],
     git: 'https://github.com/eee0930/netflix_clone',
     url: 'https://eee0930.github.io/netflix_clone',
     skill: [
@@ -57,7 +70,11 @@ export const workList = [
   },
   {
     name: 'Crypto Tracker',
-    img: '',
+    color: '#2F3640',
+    img: [
+      'https://github-production-user-asset-6210df.s3.amazonaws.com/37135523/271179853-1b168f6f-ad29-4e46-ab15-13921f9f635c.png',
+      'https://github-production-user-asset-6210df.s3.amazonaws.com/37135523/271179901-250761c9-cd05-4e91-a9a8-9fa00a3beb48.png',
+    ],
     git: 'https://github.com/eee0930/crypto_tracker',
     url: 'https://eee0930.github.io/crypto_tracker/',
     skill: [
@@ -72,7 +89,11 @@ export const workList = [
   },
   {
     name: 'Org Issue App',
-    img: '',
+    color: '#2A9885',
+    img: [
+      'https://github-production-user-asset-6210df.s3.amazonaws.com/37135523/271179946-a65aecc1-5f3d-4c62-8e1c-3be04467b9ea.png',
+      'https://github-production-user-asset-6210df.s3.amazonaws.com/37135523/271179997-8efb9b6a-ff8d-403e-aa72-666d9cfd419f.png',
+    ],
     git: 'https://github.com/eee0930/org_issue_app',
     url: 'https://eee0930.github.io/org_issue_app/',
     skill: [
@@ -87,7 +108,11 @@ export const workList = [
   },
   {
     name: 'MeowMeow Album',
-    img: '',
+    color: '#63C4F0',
+    img: [
+      'https://github-production-user-asset-6210df.s3.amazonaws.com/37135523/271180073-7c2a685f-e334-4ad1-b6c1-e8cfd27d2a48.png',
+      'https://github-production-user-asset-6210df.s3.amazonaws.com/37135523/271180116-147d3335-7e5f-4fdb-a1ab-ab830a17b365.png',
+    ],
     git: 'https://github.com/eee0930/meowmeow_album',
     url: 'https://eee0930.github.io/meowmeow_album/',
     skill: ['JavaScript', 'HTML', 'CSS'],

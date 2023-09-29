@@ -50,14 +50,14 @@ const Button = styled.button`
   height: 60px;
   width: 60px;
   font-size: 1.5rem;
-  color: rgb(245, 245, 245);
-  background-color: #262626;
+  background-color: #e8e8e8;
+  color: #262626;
   position: relative;
   transition: background-color 0.3s ease, color 0.3s ease;
   z-index: 25;
   &:hover {
-    background-color: rgb(245, 245, 245);
-    color: #262626;
+    color: #e8e8e8;
+    background-color: #262626;
   }
 `;
 const TickerWrapper = styled.div`
@@ -79,7 +79,7 @@ export const SideItem = styled(motion.div)`
   }
 `;
 export const MiddleItem = styled(motion.div)`
-  width: 400px;
+  width: 500px;
   margin: 0 0.1rem;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
   border-radius: 1rem;
@@ -211,7 +211,7 @@ function Works() {
       <GrungeContainer idx={0}>
         <WorksContainer>
           <TickerContainer className="row">
-            <Title>Selected Works (6)</Title>
+            <Title>Selected Project (6)</Title>
             <ButtonSection className="d-none d-lg-inline-block col-lg-2">
               <Button onClick={() => changeIdx(false)}>
                 <i className="fa-solid fa-angle-left" />
@@ -241,7 +241,7 @@ function Works() {
                   >
                     <TickerOneItemCover
                       style={{
-                        backgroundImage: `url(${process.env.PUBLIC_URL}/img/${idx[0]}.jpg)`,
+                        backgroundImage: `url(${workList[idx[0]].img[0]})`,
                       }}
                     ></TickerOneItemCover>
                   </SideItem>
@@ -256,7 +256,7 @@ function Works() {
                   >
                     <TickerOneItemCover
                       style={{
-                        backgroundImage: `url(${process.env.PUBLIC_URL}/img/${idx[1]}.jpg)`,
+                        backgroundImage: `url(${workList[idx[1]].img[0]})`,
                       }}
                     >
                       <TickerItem>
@@ -274,7 +274,7 @@ function Works() {
                   >
                     <TickerOneItemCover
                       style={{
-                        backgroundImage: `url(${process.env.PUBLIC_URL}/img/${idx[2]}.jpg)`,
+                        backgroundImage: `url(${workList[idx[2]].img[0]})`,
                       }}
                     ></TickerOneItemCover>
                   </SideItem>
