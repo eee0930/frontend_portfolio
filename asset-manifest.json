@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/frontend_portfolio/static/js/main.5b87e769.js",
-    "index.html": "/frontend_portfolio/index.html",
-    "main.5b87e769.js.map": "/frontend_portfolio/static/js/main.5b87e769.js.map"
+    "main.js": "/hwayeon_portfolio/static/js/main.7956533a.js",
+    "index.html": "/hwayeon_portfolio/index.html",
+    "main.7956533a.js.map": "/hwayeon_portfolio/static/js/main.7956533a.js.map"
   },
   "entrypoints": [
-    "static/js/main.5b87e769.js"
+    "static/js/main.7956533a.js"
   ]
 }
