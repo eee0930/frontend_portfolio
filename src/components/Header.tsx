@@ -36,7 +36,7 @@ const NavContainer = styled.div`
   width: 100%;
   position: relative;
 
-  color: #777;
+  color: #767e9b;
   font-size: 16px;
   @media (min-width: 991.5px) {
     padding: 0 3rem;
@@ -81,11 +81,16 @@ const MenuEle = styled.div`
   position: relative;
   width: auto;
   cursor: pointer;
+  transition: color 0.3s ease;
+  &:hover {
+    color: #a4667c;
+  }
 `;
 
 interface IHeader {
   scrollCallback: (idx: number) => void;
 }
+const MENUS = ['About', 'Project', 'Contact'];
 function Header({ scrollCallback }: IHeader) {
   return (
     <HeaderContainer>
@@ -93,9 +98,13 @@ function Header({ scrollCallback }: IHeader) {
         <NavContainer>
           <TitleSection>FrontEnd Developer. HwaYeon</TitleSection>
           <MenuSection>
-            <MenuEle onClick={() => scrollCallback(0)}>About</MenuEle>
-            <MenuEle onClick={() => scrollCallback(1)}>Project</MenuEle>
-            <MenuEle onClick={() => scrollCallback(2)}>Contact</MenuEle>
+            {MENUS.map((menu, i) => {
+              return (
+                <MenuEle key={i + 1} onClick={() => scrollCallback(i + 1)}>
+                  {menu}
+                </MenuEle>
+              );
+            })}
             <MenuEle>
               <a
                 href="https://github.com/eee0930"

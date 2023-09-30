@@ -9,7 +9,7 @@ const JumboTitleConver = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  color: rgb(245, 245, 245);
+  color: #c6cbdc;
 `;
 const CoverWrap = styled.div`
   width: 100%;
@@ -62,7 +62,7 @@ function Intro() {
         </JumboTitle>
         <InfoTitle>
           I am a passionate Front-End Developer who specializes in React.JS,
-          TypeScript, JavaScript, and Web Design.
+          TypeScript, and JavaScript.
         </InfoTitle>
       </JumboTitleConver>
     </GrungeContainer>

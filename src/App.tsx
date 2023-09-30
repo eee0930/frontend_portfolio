@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import Header from './components/Header';
 import Head from './components/Head';
 import styled from 'styled-components';
@@ -7,8 +7,9 @@ import Works from './components/Works';
 import ContactMe from './components/ContactMe';
 import Intro from './components/Intro';
 import IntroEffect from './components/IntroEffect';
+import { motion } from 'framer-motion';
 
-const ContainerWrapper = styled.div`
+const ContainerWrapper = styled(motion.div)`
   height: 100vh;
 `;
 function App() {
@@ -16,35 +17,22 @@ function App() {
   const handleScroll = (idx: number) => {
     scrollRef?.current[idx]?.scrollIntoView({ behavior: 'smooth' });
   };
-  useEffect(() => {
-    scrollRef?.current[4]?.scrollIntoView();
-  }, []);
+
   return (
     <>
       <Head />
       <Header scrollCallback={(idx) => handleScroll(idx)} />
-      <ContainerWrapper
-        ref={(el: HTMLDivElement) => (scrollRef.current[4] = el)}
-      >
-        <Intro />
-      </ContainerWrapper>
-      <ContainerWrapper
-        ref={(el: HTMLDivElement) => (scrollRef.current[0] = el)}
-        style={{ height: '170vh' }}
-      >
-        <AboutMe />
-      </ContainerWrapper>
-      <ContainerWrapper
-        ref={(el: HTMLDivElement) => (scrollRef.current[1] = el)}
-        style={{ height: '170vh' }}
-      >
-        <Works />
-      </ContainerWrapper>
-      <ContainerWrapper
-        ref={(el: HTMLDivElement) => (scrollRef.current[2] = el)}
-      >
-        <ContactMe />
-      </ContainerWrapper>
+      {[<Intro />, <AboutMe />, <Works />, <ContactMe />].map((com, i) => {
+        return (
+          <ContainerWrapper
+            key={i}
+            ref={(el: HTMLDivElement) => (scrollRef.current[i] = el)}
+            style={{ height: `${i === 1 || i === 2 ? '150vh' : '100vh'}` }}
+          >
+            {com}
+          </ContainerWrapper>
+        );
+      })}
       <IntroEffect />
     </>
   );

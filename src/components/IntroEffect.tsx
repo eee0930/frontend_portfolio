@@ -22,7 +22,7 @@ const LeftContainer = styled(motion.div)`
   -ms-flex: 0 0 100%;
   flex: 0 0 100%;
   max-width: 100%;
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(216, 220, 241);
   @media (min-width: 991.5px) {
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;

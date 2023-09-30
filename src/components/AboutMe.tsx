@@ -26,7 +26,7 @@ const TextContent = styled.div`
   text-align: center;
   font-size: 20px;
 
-  color: rgb(245, 245, 245);
+  color: #fff;
   @media (min-width: 991.5px) {
     padding: 0 3rem;
     text-align: left;
@@ -36,7 +36,7 @@ const Introduction = styled(motion.div)`
   font-size: 15px;
   line-height: 1.7;
   padding: 2rem 1rem;
-  color: rgb(245, 245, 245);
+  color: #fff;
   span,
   a {
     position: relative;
@@ -47,14 +47,14 @@ const Introduction = styled(motion.div)`
     content: '';
     width: 100%;
     height: 2px;
-    background-color: rgba(167, 167, 255, 0.5);
+    background-color: rgba(255, 235, 166, 0.6);
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
   }
   a::after {
-    background-color: rgba(254, 255, 167, 0.5);
+    background-color: rgba(255, 167, 236, 0.5);
   }
   .phase {
     margin-bottom: 0.5rem;
@@ -91,7 +91,7 @@ const ButtonSection = styled(motion.div)`
 const IconSection = styled(motion.div)`
   padding: 1rem;
   text-align: center;
-  color: rgb(245, 245, 245);
+  color: #fff;
 `;
 const Icon = styled.div`
   display: flex;
@@ -200,9 +200,10 @@ function AboutMe() {
               <div className="phase">
                 토익 공부가 너무 지겨워 영어를 쉽게 잘할 수 있는
                 웹어플리케이션을 만들겠다는 결심 하나로 IT에 입문하게
-                되었습니다. 학습력과 이해력이 누구보다 좋아 IT 입문 6개월 만에
-                마음이 맞는 3명의 팀원들과 <span>스타트업</span>을 창업하여
-                3년간 운영 및 프론트엔드 개발을 하였습니다.
+                되었습니다. <br />
+                학습력과 이해력이 누구보다 좋아 IT 입문 6개월 만에 마음이 맞는
+                3명의 팀원들과 <span>스타트업</span>을 창업하여 3년간 운영 및
+                프론트엔드 개발을 하였습니다.
               </div>
               <div className="phase">
                 평일에는 <span>Vanilla JS</span> 또는 <span>ReactJS</span>로
@@ -225,7 +226,7 @@ function AboutMe() {
             <ButtonSection variants={IconVBounce} className="row">
               <IconSection
                 variants={IconOpacity}
-                className="d-none d-md-inline-block col-6 col-xl-3"
+                className="d-none d-lg-inline-block col-6 col-xl-3"
               >
                 <Icon>
                   <img
@@ -241,7 +242,7 @@ function AboutMe() {
               </IconSection>
               <IconSection
                 variants={IconOpacity}
-                className="d-none d-md-inline-block ol-6 col-xl-3"
+                className="d-none d-lg-inline-block col-6 col-xl-3"
               >
                 <Icon>
                   <img
@@ -256,7 +257,7 @@ function AboutMe() {
               </IconSection>
               <IconSection
                 variants={IconOpacity}
-                className="d-none d-md-inline-block col-6 col-xl-3"
+                className="d-none d-lg-inline-block col-6 col-xl-3"
               >
                 <Icon>
                   <img
@@ -271,7 +272,7 @@ function AboutMe() {
               </IconSection>
               <IconSection
                 variants={IconOpacity}
-                className="d-none d-md-inline-block col-6 col-xl-3"
+                className="d-none d-lg-inline-block col-6 col-xl-3"
               >
                 <Icon>
                   <img

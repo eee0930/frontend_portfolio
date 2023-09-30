@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { styled } from 'styled-components';
 import GrungeContainer from './GrungeContianer';
 import { workList } from '../data';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, Point, motion } from 'framer-motion';
 import WorkModal from './WorkModal';
+import Work from './Work';
 
 const WorksContainer = styled.div`
   position: sticky;
@@ -27,7 +28,7 @@ const Title = styled.div`
   width: 100%;
   text-align: center;
   font-weight: bold;
-  color: #292929;
+  color: #2a2c40;
   text-transform: uppercase;
   @media (min-width: 991.5px) {
     padding-left: 3rem;
@@ -45,46 +46,44 @@ const ButtonSection = styled.div`
   align-self: center;
 `;
 const Button = styled.button`
-  border: 2px solid #262626;
+  border: 2px solid #2a2c40;
   border-radius: 50%;
   height: 60px;
   width: 60px;
   font-size: 1.5rem;
-  background-color: #e8e8e8;
-  color: #262626;
+  background-color: #c6cbdc;
+  color: #2a2c40;
   position: relative;
   transition: background-color 0.3s ease, color 0.3s ease;
   z-index: 25;
   &:hover {
-    color: #e8e8e8;
-    background-color: #262626;
+    color: #c6cbdc;
+    background-color: #2a2c40;
   }
 `;
 const TickerWrapper = styled.div`
   width: 100%;
 `;
-export const TickerOneCollection = styled(motion.div)`
+const TickerOneCollection = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
 `;
-export const SideItem = styled(motion.div)`
+const SideItem = styled(motion.div)`
   width: 300px;
   margin: 0 0.1rem;
   border-radius: 1rem;
   overflow: hidden;
-  cursor: grab;
   @media (min-width: 991.5px) {
     margin: 0 0.5rem;
   }
 `;
-export const MiddleItem = styled(motion.div)`
+const MiddleItem = styled(motion.div)`
   width: 500px;
   margin: 0 0.1rem;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
   border-radius: 1rem;
   overflow: hidden;
-  cursor: grab;
   @media (min-width: 991.5px) {
     margin: 0 0.5rem;
   }
@@ -92,32 +91,7 @@ export const MiddleItem = styled(motion.div)`
     margin: 0 1.5rem;
   }
 `;
-export const TickerOneItemCover = styled.div`
-  width: 100%;
-  aspect-ratio: 14 / 10;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-`;
-export const TickerItem = styled.div`
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: opacity 0.3s ease;
-  &:hover {
-    opacity: 1;
-  }
-`;
-export const ItemTitle = styled.div`
-  font-size: 15px;
-  color: #fff;
-  padding: 1rem 0.5rem;
-  text-align: center;
-`;
+
 export const tickerOneVariants = {
   initial: (isNext: boolean) => {
     return { x: isNext ? 100 : -100 };
@@ -181,7 +155,7 @@ function Works() {
   const [idx, setIdx] = useState([0, 1, 2]);
   const [isNext, setIsNext] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
-  const [work, setWork] = useState(0);
+  const [workIdx, setWorkIdx] = useState(0);
 
   const changeIdx = (next: boolean) => {
     setIdx((prev) => {
@@ -202,7 +176,7 @@ function Works() {
     });
   };
   const handleClickWork = (workIdx: number) => {
-    setWork(workIdx);
+    setWorkIdx(workIdx);
     setModalOpen(true);
   };
 
@@ -239,11 +213,7 @@ function Works() {
                     }}
                     custom={isNext}
                   >
-                    <TickerOneItemCover
-                      style={{
-                        backgroundImage: `url(${workList[idx[0]].img[0]})`,
-                      }}
-                    ></TickerOneItemCover>
+                    <Work work={workList[idx[0]]} />
                   </SideItem>
                   <MiddleItem
                     variants={middleItem}
@@ -254,15 +224,7 @@ function Works() {
                     layoutId="content"
                     onClick={() => handleClickWork(idx[1])}
                   >
-                    <TickerOneItemCover
-                      style={{
-                        backgroundImage: `url(${workList[idx[1]].img[0]})`,
-                      }}
-                    >
-                      <TickerItem>
-                        <ItemTitle>{workList?.at(idx[1])?.name}</ItemTitle>
-                      </TickerItem>
-                    </TickerOneItemCover>
+                    <Work work={workList[idx[1]]} isMiddle={true} />
                   </MiddleItem>
                   <SideItem
                     variants={biggerItem}
@@ -272,11 +234,7 @@ function Works() {
                     }}
                     custom={isNext}
                   >
-                    <TickerOneItemCover
-                      style={{
-                        backgroundImage: `url(${workList[idx[2]].img[0]})`,
-                      }}
-                    ></TickerOneItemCover>
+                    <Work work={workList[idx[2]]} />
                   </SideItem>
                 </TickerOneCollection>
               </TickerWrapper>
@@ -291,7 +249,7 @@ function Works() {
       </GrungeContainer>
 
       {modalOpen && (
-        <WorkModal callback={() => setModalOpen(false)} workIdx={work} />
+        <WorkModal callback={() => setModalOpen(false)} workIdx={workIdx} />
       )}
     </>
   );

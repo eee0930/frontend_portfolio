@@ -66,9 +66,9 @@ const ButtonSection = styled(motion.div)`
   }
 `;
 const Button = styled.a`
-  border: 2px solid #e8e8e8;
-  background-color: #262626;
-  color: #e8e8e8;
+  border: 2px solid #c6cbdc;
+  background-color: #2a2c40;
+  color: #c6cbdc;
   border-radius: 25px;
   height: 50px;
   width: 150px;
@@ -81,8 +81,8 @@ const Button = styled.a`
   transition: background-color 0.3s ease, color 0.3s ease;
   margin-right: 1rem;
   &:hover {
-    background-color: #e8e8e8;
-    color: #262626;
+    background-color: #c6cbdc;
+    color: #2a2c40;
   }
   &.clone {
     width: 50px;
@@ -91,7 +91,7 @@ const Button = styled.a`
 `;
 const ButtonMsg = styled.div`
   background-color: #e8e8e8;
-  color: #262626;
+  color: #2a2c40;
   border-radius: 5px;
   width: 205px;
   padding: 5px 5px;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { COLORS } from '../data';
 
 const BackgroundColorContainer = styled.div`
   width: 100%;
@@ -25,12 +26,11 @@ interface IGrungeContainer {
   isOut?: boolean;
 }
 
-const BACKGROUND_COLOR = ['rgb(245, 245, 245)', 'rgb(26, 26, 26)'];
 function GrungeContainer({ children, idx, isOut = true }: IGrungeContainer) {
   return (
     <BackgroundColorContainer
       style={{
-        backgroundColor: BACKGROUND_COLOR[idx],
+        backgroundColor: COLORS[idx],
       }}
     >
       {!isOut && children}
