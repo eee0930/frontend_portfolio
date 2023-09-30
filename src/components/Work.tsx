@@ -7,6 +7,7 @@ const WorkContentContainer = styled.div`
   height: 100%;
   position: relative;
   background-color: #fff;
+  cursor: pointer;
 `;
 const WorkContentBack = styled.div`
   width: 100%;
@@ -84,13 +85,19 @@ function Work({ work, isMiddle = false }: IWorkData) {
       <WorkContentBack style={backColor} />
       <WorkContentWrap>
         <PcContainer style={backColor}>
-          <PcImg src={work.img[0]} alt={work.name} />
+          <PcImg
+            src={`${process.env.PUBLIC_URL}/img/data/${work.img[0]}.png`}
+            alt={work.name}
+          />
         </PcContainer>
         <MobileContainer
           className={`${isMiddle && 'middle'}`}
           style={backColor}
         >
-          <MobileImg src={work.img[1]} alt={work.name} />
+          <MobileImg
+            src={`${process.env.PUBLIC_URL}/img/data/${work.img[1]}.png`}
+            alt={work.name}
+          />
         </MobileContainer>
       </WorkContentWrap>
     </WorkContentContainer>

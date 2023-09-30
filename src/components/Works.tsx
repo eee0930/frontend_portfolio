@@ -212,6 +212,7 @@ function Works() {
                       delay: 0.1,
                     }}
                     custom={isNext}
+                    onClick={() => changeIdx(false)}
                   >
                     <Work work={workList[idx[0]]} />
                   </SideItem>
@@ -233,6 +234,7 @@ function Works() {
                       delay: 0.1,
                     }}
                     custom={isNext}
+                    onClick={() => changeIdx(true)}
                   >
                     <Work work={workList[idx[2]]} />
                   </SideItem>

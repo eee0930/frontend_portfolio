@@ -152,7 +152,7 @@ const ButtonSection2 = styled.div`
     margin-right: 1rem;
     border: solid 2px rgb(37, 39, 57);
     color: rgb(37, 39, 57);
-    background-color: rgb(216, 220, 241);
+    background-color: #fff);
     height: 50px;
     border-radius: 25px;
     padding: 8px 20px;
@@ -160,7 +160,7 @@ const ButtonSection2 = styled.div`
     transition: background-color 0.3s ease, color 0.3s ease;
     &:hover {
       background-color: rgb(37, 39, 57);
-      color: rgb(216, 220, 241);
+      color: #fff;
     }
   }
 `;
@@ -246,7 +246,9 @@ function WorkModal({ callback, workIdx }: IWorkModal) {
                   onDragEnd={(e, { offset, velocity }) =>
                     handleDragImg(offset, velocity)
                   }
-                  style={{ backgroundImage: `url(${imgList[idx]})` }}
+                  style={{
+                    backgroundImage: `url(${process.env.PUBLIC_URL}/img/data/${imgList[idx]}.gif)`,
+                  }}
                 />
 
                 <ButtonSection>
@@ -280,7 +282,7 @@ function WorkModal({ callback, workIdx }: IWorkModal) {
               View Site
             </a>
             <a href={git} target="_blank" rel="noreferrer">
-              GitHub
+              GitHub Storage
             </a>
           </ButtonSection2>
         </Description>
