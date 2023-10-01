@@ -267,7 +267,6 @@ function WorkModal({ callback, workIdx }: IWorkModal) {
         </AnimatePresence>
         <Description>
           <Title className="title">{name}</Title>
-
           <LinkSection>
             {skill.map((s) => (
               <Label key={s} className={s}>

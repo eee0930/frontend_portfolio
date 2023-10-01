@@ -23,6 +23,12 @@ const WorkContentWrap = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
+  @media (min-width: 991.5px) {
+    &:hover .titleSection {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `;
 const PcContainer = styled.div`
   width: 80%;
@@ -71,6 +77,33 @@ const MobileImg = styled.img`
   box-shadow: -1px -1px 2px rgba(0, 0, 0, 0.2),
     1px 1px 3px rgba(255, 255, 255, 0.2);
 `;
+const TitleSection = styled.div`
+  @media (min-width: 991.5px) {
+    opacity: 0;
+    transform: translateY(100%);
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: transform 0.1s ease-in-out, opacity 0.4s ease;
+  }
+`;
+const Logo = styled.div`
+  width: 180px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+`;
+const Title = styled.div`
+  font-size: 1.5rem;
+  letter-spacing: -1px;
+  color: #fff;
+`;
 interface IWorkData {
   work: IWork;
   isMiddle?: boolean;
@@ -99,6 +132,19 @@ function Work({ work, isMiddle = false }: IWorkData) {
             alt={work.name}
           />
         </MobileContainer>
+        {isMiddle && (
+          <TitleSection className="titleSection">
+            {work.logo ? (
+              <Logo
+                style={{
+                  backgroundImage: `url(${process.env.PUBLIC_URL}/img/data/${work.logo})`,
+                }}
+              />
+            ) : (
+              <Title className="title">{work.name}</Title>
+            )}
+          </TitleSection>
+        )}
       </WorkContentWrap>
     </WorkContentContainer>
   );
