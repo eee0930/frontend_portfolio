@@ -87,7 +87,7 @@ const Description = styled.div`
 const Title = styled.div`
   font-size: 2rem;
   margin-bottom: 1rem;
-  font-weight: bold;
+  font-weight: 600 !important;
 `;
 const LinkSection = styled.div`
   margin-bottom: 1rem;
