@@ -28,6 +28,10 @@ const TextContent = styled.div`
 
   color: #fff;
   @media (min-width: 991.5px) {
+    padding: 0 1rem;
+    text-align: left;
+  }
+  @media (min-width: 1199.5px) {
     padding: 0 3rem;
     text-align: left;
   }
@@ -60,11 +64,15 @@ const Introduction = styled(motion.div)`
     margin-bottom: 0.5rem;
   }
   @media (min-width: 991.5px) {
-    font-size: 18px;
+    font-size: 17px;
     padding: 0;
     .phase {
       margin-bottom: 1rem;
     }
+  }
+
+  @media (min-width: 1199.5px) {
+    font-size: 18px;
   }
 `;
 const ImageContainer = styled(motion.div)`
@@ -80,9 +88,12 @@ const Image = styled(motion.div)`
   margin: 0 auto;
   border-radius: 1rem;
   @media (min-width: 991.5px) {
-    width: 220px;
+    width: 180px;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
+  }
+  @media (min-width: 1199.5px) {
+    width: 220px;
   }
 `;
 const ButtonSection = styled(motion.div)`
@@ -184,7 +195,9 @@ function AboutMe() {
         viewport={{ once: true, amount: 0.4 }}
       >
         <AboutMeCover>
-          <TextContent className="col-12 col-lg-3">ABOUT ME</TextContent>
+          <TextContent className="col-12 col-lg-2 col-xl-3">
+            ABOUT ME
+          </TextContent>
           <ImageContainer className="col-12 d-lg-none">
             <Image
               style={{
@@ -192,7 +205,10 @@ function AboutMe() {
               }}
             />
           </ImageContainer>
-          <Introduction variants={textBounce} className="col-12 col-lg-6">
+          <Introduction
+            variants={textBounce}
+            className="col-12 col-lg-7 col-xl-6"
+          >
             <div>
               <div className="phase">
                 안녕하세요! 프론트엔드 개발자 송화연입니다.
@@ -223,10 +239,13 @@ function AboutMe() {
                 <span>협업</span>을 중요하게 여깁니다.
               </div>
             </div>
-            <ButtonSection variants={IconVBounce} className="row">
+            <ButtonSection
+              variants={IconVBounce}
+              className="row d-none d-xl-block"
+            >
               <IconSection
                 variants={IconOpacity}
-                className="d-none d-lg-inline-block col-6 col-xl-3"
+                className="d-none d-lg-inline-block col-6 col-lg-3"
               >
                 <Icon>
                   <img
@@ -242,7 +261,7 @@ function AboutMe() {
               </IconSection>
               <IconSection
                 variants={IconOpacity}
-                className="d-none d-lg-inline-block col-6 col-xl-3"
+                className="d-none d-lg-inline-block col-6 col-lg-3"
               >
                 <Icon>
                   <img
@@ -257,7 +276,7 @@ function AboutMe() {
               </IconSection>
               <IconSection
                 variants={IconOpacity}
-                className="d-none d-lg-inline-block col-6 col-xl-3"
+                className="d-none d-lg-inline-block col-6 col-lg-3"
               >
                 <Icon>
                   <img
@@ -272,7 +291,7 @@ function AboutMe() {
               </IconSection>
               <IconSection
                 variants={IconOpacity}
-                className="d-none d-lg-inline-block col-6 col-xl-3"
+                className="d-none d-lg-inline-block col-6 col-lg-3"
               >
                 <Icon>
                   <img

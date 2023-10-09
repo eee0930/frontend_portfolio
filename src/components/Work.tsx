@@ -133,7 +133,7 @@ function Work({ work, isMiddle = false }: IWorkData) {
           />
         </MobileContainer>
         {isMiddle && (
-          <TitleSection className="titleSection">
+          <TitleSection className="d-none d-lg-flex titleSection">
             {work.logo ? (
               <Logo
                 style={{

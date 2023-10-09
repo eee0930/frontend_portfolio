@@ -21,16 +21,18 @@ const LayoutBack = styled.div`
 `;
 const Modalcover = styled(motion.div)`
   position: absolute;
-  top: 50%;
-  left: 50%;
-  height: 500px;
-  width: 650px;
+  top: 5vh;
+  left: 5vw;
+  height: 90vh;
+  width: 90vw;
   background-color: #fff;
   border-radius: 2rem;
   overflow: auto;
   @media (min-width: 991.5px) {
-    height: 500px;
-    width: 650px;
+    top: 5vh;
+    left: 15vw;
+    height: 90vh;
+    width: 70vw;
   }
   @media (min-width: 1199.5px) {
     top: 5%;
@@ -103,6 +105,8 @@ const Label = styled.label`
   padding: 2px 5px;
   font-size: 14px;
   color: #fff;
+  margin-bottom: 0.5rem;
+  display: inline-block;
   width: max-content;
   &.JavaScript {
     background-color: #fac942;

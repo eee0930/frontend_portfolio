@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { styled } from 'styled-components';
 import GrungeContainer from './GrungeContianer';
 import { workList } from '../data';
-import { AnimatePresence, Point, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import WorkModal from './WorkModal';
 import Work from './Work';
 
