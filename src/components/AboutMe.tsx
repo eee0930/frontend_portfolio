@@ -241,7 +241,7 @@ function AboutMe() {
             </div>
             <ButtonSection
               variants={IconVBounce}
-              className="row d-none d-xl-block"
+              className="row d-none d-xl-flex"
             >
               <IconSection
                 variants={IconOpacity}
