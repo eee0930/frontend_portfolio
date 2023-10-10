@@ -234,10 +234,6 @@ function AboutMe() {
                 의 스터디장으로서 지방에는 잘 없는 개발자들을 모아 매주
                 토요일마다 모각코 및 스터디를 진행하고 있습니다.
               </div>
-              <div className="phase">
-                맡은 프로젝트의 목적을 우선적으로 고려하고 원활한{' '}
-                <span>협업</span>을 중요하게 여깁니다.
-              </div>
             </div>
             <ButtonSection
               variants={IconVBounce}
