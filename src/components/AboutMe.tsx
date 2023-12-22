@@ -201,7 +201,7 @@ function AboutMe() {
           <ImageContainer className="col-12 d-lg-none">
             <Image
               style={{
-                backgroundImage: `url(${process.env.PUBLIC_URL}/img/hwayeonsong.jpg)`,
+                backgroundImage: `url(${process.env.PUBLIC_URL}/img/coding_hard.png)`,
               }}
             />
           </ImageContainer>
@@ -306,7 +306,7 @@ function AboutMe() {
             <Image
               variants={imageBounce}
               style={{
-                backgroundImage: `url(${process.env.PUBLIC_URL}/img/hwayeonsong.jpg)`,
+                backgroundImage: `url(${process.env.PUBLIC_URL}/img/coding_hard.png)`,
               }}
             />
           </ImageContainer>

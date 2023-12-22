@@ -284,9 +284,11 @@ function WorkModal({ callback, workIdx }: IWorkModal) {
             <a href={url} target="_blank" rel="noreferrer">
               View Site
             </a>
-            <a href={git} target="_blank" rel="noreferrer">
-              GitHub Storage
-            </a>
+            {git && (
+              <a href={git} target="_blank" rel="noreferrer">
+                GitHub Storage
+              </a>
+            )}
           </ButtonSection2>
         </Description>
       </Modalcover>
